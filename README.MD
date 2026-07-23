@@ -195,7 +195,7 @@ AI sangat bermanfaat sebagai alat bantu dalam mempercepat pemrograman. Namun, va
 
 ## Referensi
 
-* **Situs Web:** [The Skyscraper Center - CTBUH](https://www.skyscrapercenter.com/buildings)
+* **Situs Web:** [The Skyscraper Center](https://www.skyscrapercenter.com/buildings) https://www.skyscrapercenter.com/buildings
 * **Library Python:**
 * `beautifulsoup4`(Parsing dokumen HTML)
 * `psycopg2-binary`(Driver PostgreSQL adapter untuk python)
