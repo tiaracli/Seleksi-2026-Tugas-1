@@ -1,0 +1,106 @@
+[
+    {
+        "city_id": 1,
+        "city_name": "Dubai"
+    },
+    {
+        "city_id": 2,
+        "city_name": "Kuala Lumpur"
+    },
+    {
+        "city_id": 3,
+        "city_name": "Shanghai"
+    },
+    {
+        "city_id": 4,
+        "city_name": "Mecca"
+    },
+    {
+        "city_id": 5,
+        "city_name": "Shenzhen"
+    },
+    {
+        "city_id": 6,
+        "city_name": "Seoul"
+    },
+    {
+        "city_id": 7,
+        "city_name": "New York City"
+    },
+    {
+        "city_id": 8,
+        "city_name": "Guangzhou"
+    },
+    {
+        "city_id": 9,
+        "city_name": "Tianjin"
+    },
+    {
+        "city_id": 10,
+        "city_name": "Beijing"
+    },
+    {
+        "city_id": 11,
+        "city_name": "Taipei"
+    },
+    {
+        "city_id": 12,
+        "city_name": "Hong Kong"
+    },
+    {
+        "city_id": 13,
+        "city_name": "Wuhan"
+    },
+    {
+        "city_id": 14,
+        "city_name": "St. Petersburg"
+    },
+    {
+        "city_id": 15,
+        "city_name": "Ho Chi Minh City"
+    },
+    {
+        "city_id": 16,
+        "city_name": "Changsha"
+    },
+    {
+        "city_id": 17,
+        "city_name": "Suzhou"
+    },
+    {
+        "city_id": 18,
+        "city_name": "Nanjing"
+    },
+    {
+        "city_id": 19,
+        "city_name": "Chicago"
+    },
+    {
+        "city_id": 20,
+        "city_name": "Dongguan"
+    },
+    {
+        "city_id": 21,
+        "city_name": "Kuwait City"
+    },
+    {
+        "city_id": 22,
+        "city_name": "Busan"
+    },
+    {
+        "city_id": 23,
+        "city_name": "Ningbo"
+    },
+    {
+        "city_id": 24,
+        "city_name": "Nanning"
+    },
+    {
+        "city_id": 25,
+        "city_name": "Guiyang"
+    },
+    {
+        "city_id": 26,
+        "city_name": "Cairo"
+    }
+]

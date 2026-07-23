@@ -1,75 +1,204 @@
-<h1 align="center">
-  <br>
-  Seleksi Warga Basdat 2026 <br>
-  ETL Project
-  <br>
-  <br>
-</h1>
-
-<h2 align="left">
-  <br>
-  Singkatnya?
-  <br>
-</h2>
-Pada tahap seleksi ini, peserta akan diminta untuk melakukan proses ETL yang meliputi data scraping, database modeling, dan data storing terkait sebuah topik yang dibebaskan kepada peserta. Peserta juga diminta untuk merancang sebuah model ERD dan model relasional yang akan diimplementasikan untuk menyimpan hasil proses data scraping sebelumnya. Tahap seleksi ini menguji kemampuan peserta untuk mengumpulkan data, merancang sebuah database, dan merealisasikan rancangan tersebut menjadi sebuah database relasional yang fungsional.
-  <br>
-
-## Step 1: Data Scraping
-1. Pilih sebuah topik yang akan kalian jadikan sebagai tema pada seleksi _data scraping_ Anda. Daftarkan topik tersebut ke dalam spreadsheet berikut:
-[Daftar Topik Seleksi Asisten Lab Basis Data 2026](https://docs.google.com/spreadsheets/d/1cowSMPtWQApyALrypfMBJSOuqbXyGh2cCaDXKRs8fD4/edit?usp=sharing)
-    - Usahakan agar tidak ada dua atau lebih peserta dengan topik yang sama
-    - First come, first served. Bila ada dua atau lebih peserta dengan topik yang sama, peserta dengan topik yang sudah terdaftar duluan (berada di atas) akan diprioritaskan.
-    - Akses edit ke _spreadsheet_ topik data scraping akan ditutup pada tanggal **25 Juli pukul 20:40 WIB**
-2. Lakukan _data scraping_ dari sebuah _web page_ untuk memperoleh data dan informasi sesuai dengan topik yang telah dipilih oleh masing-masing peserta. 
-    - Data dan informasi yang diperoleh akan digunakan di _step_ berikutnya sebagai data yang akan disimpan di dalam sebuah RDBMS
-    - Peserta **DILARANG** menggunakan API untuk melakukan proses data scraping
-3. Pada folder `Data Scraping`, peserta harus mengumpulkan file _script_ dan file JSON hasil _scraping_ yang telah dilakukan
-    - Folder `src` berisi _script_/_code_ yang telah digunakan untuk _scraping_. Pastikan bahwa _script_/_code_ yang kalian bua bersifat well documented dan clean. 
-    - Folder `data` berisi semua data dan informasi yang berhasil kalian scrape dalam bentu JSON. Peserta diperbolehkan untuk memisahkan hasil _scraping_ ke dalam file-file yang berbeda ataupun digabung dalam satu file yang besar. Yang penting sesuai dengan output dari _script_ _data scraping_ yang digunakan
-    - Folder `screenshot` berisi tangkapan layar dari _script/code_ yang kalian gunakan untuk _data scraping_. Pastikan tangkapan layar dapat dibaca dengan jelas
-4. Sebagai referensi untuk mempelajari dan mengenal _data scraping_, asisten telah menyiapkan dokumen panduan singkat pada link berikut: Panduan Singkat Data Scraping
-    - Dokumen tersebut hanya merupakan panduan bagi peserta. Metodologi _data scraping_ yang digunakan oleh peserta seleksi basdat dibebaskan (asal sesuai peraturan)
-    - Perhatikan dan peragakan etika _data scraping_ yang baik dalam pelaksanaan seleksi ini
-5. Syarat data yang diperoleh dari proses data scraping: Data yang diperoleh harus di-_preprocessing_ terlebih dahulu
-    - Beberapa contoh _preprocessing_:
-        - Cleaning
-        - Parsing
-        - Transformation
-        - Dll
-    - Preprocessing dilakukan untuk memastikan data yang diterima tidak sepenuh-penuhnya mentah dan tidak dapat dipahami dengan mudah
-  
-
-## Step 2: Data Modeling + Data Storing
-1. Dari hasil proses _data scraping_ yang telah dilakukan, lakukan perancangan _database_ dalam bentuk **ERD**. Sertakan asumsi dan penjelasan di dalam desain ERD-nya bila diperlukan
-2. Translasikan hasil desain ERD tersebut ke dalam bentuk diagram relasional. Peserta dipersilahkan untuk menambahkan tabel lain yang sekiranya relevan atau berkaitan dengan tabel-tabel yang murni didapatkan dari proses _data scraping_.
-3. Implementasikan skema diagram relasional tersebut ke dalam RDBMS sesuai pilihan peserta (PostgreSQL, mariaDB, etc). Peserta **dilarang** untuk menggunakan DBMS no-SQL
-    - Jangan lupa untuk mengimplementasikan _constraints_ ke dalam _database_ (primary key, foreign key, trigger, dll)
-4. Setelah _database_-nya telah diimplementasikan, masukkan data yang didapatkan dari proses _scraping_ ke dalam RDBMS yang telah dibuat
-    - Tabel tambahan yang dibuat pada poin 2 tidak perlu diisi dengan data (baik data _dummy_ maupun data asli). Cukup dibiarkan kosong
-5. Tools yang digunakan dibebaskan kepada peserta
-6. Pada folder `Data Storing`, peserta harus mengumpulkan bukti penyimpanan data pada DBMS. Folder `Data Storing` terdiri dari folder `design`, `export`, dan `screenshots`.
-    - Folder `design` berisi gambar ERD dan gambar diagram relasional dari _database_ yang kalian rancang. Format file yang diterima adalah **.png**
-    - Folder `src` berisi script/code yang telah digunakan untuk storing. Pastikan bahwa script/code yang kalian bua bersifat well documented dan clean. 
-    - Folder `export` berisi file hasil _export_ dari DBMS dengan format **.sql**
-    - Folder `screenshots` berisi tangkapan layar bukti dari penyimpanan data ke dalam RDBMS (Query SELECT FROM WHERE pada RDBMS)
-
-## Bonus:
-Task-task berikut merupakan bonus yang **TIDAK WAJIB** dilakukan oleh peserta seleksi. Penyelesaian satu atau lebih dari task bonus akan membawa nilai tambahan bagi peserta yang menyelesaikannya. Peserta dibolehkan untuk mengerjakan sebagian atau seluruh dari task bonus yang tersedia
-1. Buatlah perancangan dan implementasi data warehouse berdasarkan data yang diperoleh dari proses data scraping. Rancanglah skema yang diperlukan untuk fact table dan dimension table (misalnya menggunakan pendekatan star schema atau snowflake schema) untuk mendukung kebutuhan analitik. Sertakan struktur skema data warehouse yang digunakan beserta contoh query analitik yang bisa dijalankan terhadap data tersebut. 
-2. Lakukan automated scheduling untuk keseluruhan proses, sehingga data dapat di-update secara berkala. Pastikan tidak terdapat redundansi data pada DBMS. Jika mengerjakan bonus ini, jelaskan pada README dan cantumkan pada data waktu pelaksanaan scheduling, misalnya dengan menunjukkan perbedaan timestamp ekstraksi antara data pada batch pertama dan data pada batch kedua
+# Seleksi Tahap 2 Lab Basdat - ETL Project Data Scraping, Database Modeling, and Data Storing
 
 
-# Pengumpulan
-1. Peserta diwajibkan untuk melakukan _fork_ terhadap project [GitHub Seleksi Lab Basdat 2026](https://github.com/wargabasdat/Seleksi-2026-Tugas-1). Peserta harus melakukan _pull request_ dengan nama **TUGAS_SELEKSI_1_[NIM]** sebelum tenggat waktu yang telah ditetapkan
-2. Tambahkan **.gitignore** pada _file_ atau _folder_ yang tidak perlu di-upload. NB: Binary tidak perlu di-upload
-3. Sertakan file **README** yang memuat:
-    - Author (Nama dan NIM)
-    - Deskripsi singkat mengenai data dan DBMS yang telah dibuat + mengapa kalian memilih topik tersebut
-    - Cara menggunakan scraper yang telah dibuat dan menggunakan hasil output-nya
-    - Penjelasan struktur dari file JSON yang dihasilkan scraper
-    - Struktur ERD dan diagram relasional RDBMS
-    - Penjelasan mengenai proses translasi ERD menjadi diagram relasional
-    - Beberapa screenshot dari program yang dijalankan (image di-upload sesuai folder-folder yang tersedia, di README tinggal ditampilkan)
-    - Referensi (library yang digunakan, link halaman web yang di-scrape, etc)
-  
-# DEADLINE PENGUMPULAN ADALAH TANGGAL 23 Juli 2026, PUKUL 22:40
+## Author
+
+* **Nama:** Tiara Clianta Andiwi
+* **NIM:** 18224078
+
+---
+
+## Deskripsi Topik & DBMS
+
+Proyek ini mencakup alur pengolahan data terintegrasi, mulai dari ekstraksi data gedung pencakar langit (*skyscrapers*) dari situs Skyscraper Center, pembersihan data (*data cleaning*), penyimpanan ke PostgreSQL RDBMS, pembuatan skema *Data Warehouse* (Star Schema), hingga optimasi query database.
+Source: https://www.skyscrapercenter.com/buildings 
+
+### Alasan Pemilihan Topik
+
+Topik Skyscrapers dipilih karena memiliki keberagaman tipe data yang cukup komprehensif. Data ini mencakup atribut numerik kontinu (`height_m`, `height_ft`), numerik diskrit (`completion_year`, `floors`), atribut kategorikal (`material`, `function`), serta entitas relasional lokasi (`city`). Struktur data ini sangat ideal dalam konteks pemodelan basis data relasional (1:N) dan perancangan OLAP/Data Warehouse.
+
+---
+
+## Cara Menggunakan Scraper & Hasil Output
+
+### 1. Instalasi Environment
+
+Pastikan sudah menginstall Python 3 dan PostgreSQL. Kemudian jalankan kode ini untuk menyiapkan *virtual environment* dan menginstal dependensinya:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install bs4 psycopg2-binary
+
+```
+### 2. Penanganan Problem Cloudflare (Workaround)
+
+Saat melakukan HTTP request langsung ke URL website (`[skyscrapercenter.com/buildings](https://skyscrapercenter.com/buildings)`), server target mengembalikan respons **HTTP 403 Forbidden** akibat proteksi Cloudflare WAF.
+
+Solusi (*workaround*):
+
+1. Halaman web diakses via browser dan diunduh (*Save As*) ke dalam format HTML (`.html`).
+2. File tersebut disimpan ke folder `Data Scraping/src/`.
+3. Skrip `scraper.py` dirancang untuk membaca file `.html` secara lokal (*offline parsing*) menggunakan `BeautifulSoup`, lalu melakukan ekstraksi pola teks (*regex*) untuk memisahkan kolom 
+
+### 3. Menjalankan Scraper
+
+Jalankan skrip ekstraksi data melalui terminal dengan kode:
+
+```bash
+python3 "Data Scraping/src/scraper.py"
+
+```
+### 4. Penggunaan Hasil Output
+
+Hasil scraping akan menghasilkan dua file JSON di folder `Data Scraping/data/` (`cities.json` dan `buildings.json`). File ini digunakan oleh skrip `Data Storing/src/storing.py` untuk dimasukkan ke dalam basis data PostgreSQL `skyscrapers_db`.
+
+---
+
+## Struktur File JSON
+
+### 1. `cities.json`
+
+Menyimpan entitas kota untuk mencegah redundansi data (Normalisasi).
+
+```json
+[
+    {
+        "city_id": 1,
+        "city_name": "Dubai"
+    }
+]
+
+```
+
+* `city_id`: Unique identifier setiap kota (Integer, Primary Key).
+* `city_name`: Nama kota (String).
+
+### 2. `buildings.json`
+
+Menyimpan atribut detail dari setiap gedung pencakar langit (skyscraper)
+
+```json
+[
+    {
+        "building_id": 1,
+        "name": "Burj Khalifa",
+        "city_id": 1,
+        "completion_year": 2010,
+        "height_m": 828.0,
+        "height_ft": 2717.0,
+        "floors": 163,
+        "function": "Office / Residential / Hotel",
+        "material": "Steel / Concrete"
+    }
+]
+
+```
+
+* `building_id`: Unique identifier gedung (Integer, Primary Key).
+* `name`: Nama lengkap gedung (String).
+* `city_id`: Referensi ke entitas kota (Integer, Foreign Key ke `cities.json`).
+* `completion_year`: Tahun gedung selesai dibangun (Integer).
+* `height_m`: Tinggi gedung dalam satuan meter (Float).
+* `height_ft`: Tinggi gedung dalam satuan feet (Float).
+* `floors`: Jumlah lantai gedung (Integer).
+* `function`: Peruntukan/fungsi penggunaan gedung (String).
+* `material`: Bahan baku utama struktur gedung (String)
+
+---
+
+## ERD & Diagram Relasional RDBMS
+
+### Entity Relationship Diagram (ERD)
+
+### Struktur Tabel Relational Database
+
+1. **Tabel `cities**`
+* `city_id` (INT, Primary Key)
+* `city_name` (VARCHAR(100), NOT NULL)
+
+
+2. **Tabel `buildings**`
+* `building_id` (INT, Primary Key)
+* `name` (VARCHAR(255), NOT NULL)
+* `city_id` (INT, Foreign Key references `cities(city_id)`)
+* `completion_year` (INT)
+* `height_m` (FLOAT)
+* `height_ft` (FLOAT)
+* `floors` (INT)
+* `function` (VARCHAR(100))
+* `material` (VARCHAR(100))
+
+
+---
+
+## Translasi ERD ke Diagram Relasional
+
+1. **Pemetaan *Strong Entities*:**
+Entitas `cities` dan `buildings` masing-masing ditranslasikan menjadi tabel terpisah (`cities` dan `buildings`)
+2. **Pemetaan Relasi One-to-Many (1:N):**
+Satu kota dapat memiliki banyak gedung (`1 city : N buildings`). Berdasarkan aturan kardenalitas relasional, Primary key dari sisi "One" (`cities.city_id`) dimasukkan sebagai **Foreign Key** ke dalam tabel sisi "Many" (`buildings.city_id`).
+3. **Normalisasi (2NF):**
+Atribut nama kota dipisahkan dari tabel gedung ke tabel `cities`. Hal ini dilakukan untuk menghilangkan *transitive dependency* dan redundansi penyimpanan string nama kota yang sama berulang kali.
+
+![ERD](Data%20Storing/design/erd.png)
+
+---
+
+## Screenshot Jalannya Program
+
+### 1. Eksekusi Storing Data ke PostgreSQL
+
+Data JSON berhasil di-insert ke dalam RDBMS PostgreSQL:
+
+![Select Buildings](Data%20Storing/screenshot/select.jpg)
+
+### 2. Eksekusi Loading Data Warehouse (Star Schema)
+
+Data berhasil ditransformasikan ke dalam Fact Table (`fact_buildings`) dan Dimension Tables:
+
+![Data Warehouse Star Schema](Data%20Warehouse/screenshot/dw_select.jpg)
+
+### 3. Query Optimization & Indexing
+
+1) Filtering range height dan year. Penggunaan B-Tree Index (idx_buildings_height_year) mengubah pencarian dari Sequential Scan menjadi Index Scan.
+
+![Optimisasi 1](Query%20Optimasi/optimasi1.jpg)
+
+2) Aggregation JOIN City, penggunaan Index Foreign Key (idx_buildings_city_id) mempercepat operasi Hash Join dan Group Aggregate.
+
+![Optimisasi 2](Query%20Optimasi/optimasi2.jpg)
+
+3) Index idx_buildings_floors mempercepat pengurutan (sorting) data jumlah lantai terbesar tanpa melakukan Top-N Sort berbiaya tinggi.
+
+![Optimisasi 3](Query%20Optimasi/optimasi3.jpg)
+
+---
+
+## Penggunaan AI 
+
+### 1. Bagian yang Dibantu AI
+* Eksplorasi pembuatan pola regex parsing pada skrip BeautifulSoup (scraper.py) untuk menangani pergeseran kolom HTML
+* Penentuan library yang akan digunakan pada setiap tahap berbeda
+* Troubleshooting error kode pada scraper.py, storing.py, dan load_dw.py
+* Penyusunan konten README agar terstruktur (cara attach image, formatting, dll.)
+
+### 2. Bagian yang Dikerjakan Mandiri
+* Penentuan topik, solusi Cloudflare HTTP 403 Forbidden, dan pengambilan file HTML lokal
+* Perancangan ERD, Relational Model, dan penetapan constraint database di postgreSQL
+* Eksekusi akhir kode, debugging environment lokal Mac/PostgreSQL, verifikasi data, serta dokumentasi README.md
+
+### 3. Refleksi Penggunaan AI
+AI sangat bermanfaat sebagai alat bantu dalam mempercepat pemrograman. Namun, validasi manual tetap harus dilakukan karena hasil AI sempat menghasilkan beberapa error, kemudian disempurnakan dengan penyesuaian logika parsing secara mandiri.
+
+---
+
+## Referensi
+
+* **Situs Web:** [The Skyscraper Center - CTBUH](https://www.skyscrapercenter.com/buildings)
+* **Library Python:**
+* `beautifulsoup4`(Parsing dokumen HTML)
+* `psycopg2-binary`(Driver PostgreSQL adapter untuk python)
+* `json`, `os`, `re`, `glob`(Modul bawaan Python untuk manipulasi file, direktori, dan regex parsing)
+
+* **DBMS:** PostgreSQL 14+
